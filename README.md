@@ -32,7 +32,7 @@ Presets are powerful tools in Lightroom, but managing a growing collection of th
    
 5. Run the program:
    ```bash
-   python app.py
+   python main.py
    
 ## Contributing
 Contributions are welcome! If you'd like to improve this tool, please open an issue or submit a pull request.
