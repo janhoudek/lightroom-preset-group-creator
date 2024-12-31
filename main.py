@@ -1,5 +1,6 @@
 import os
 import re
+import shutil
 
 def create_directory(directory_name: str):
     """
@@ -87,3 +88,15 @@ if __name__ == '__main__':
             # process only .xmp files.
             if name.endswith('.xmp'):
                 edit_xmp_cluster(file_path, new_value, output_file_path)
+
+    # create a zip archive of the output directory.
+    output_folder_name = os.listdir('./temp')[0]
+    output_folder_path = os.path.join('./temp/', output_folder_name)
+
+    shutil.make_archive(output_folder_name, 'zip', output_folder_path)
+
+    # remove temp folder
+    try:
+        shutil.rmtree('./temp')
+    except FileNotFoundError:
+        print(f'File not found: "./temp"')
