@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h2>{% block title %}CREATOR{% endblock title %}</h2>
+{% endblock header %}
+
+{% block content %}
+<h3>Process XMP Files</h3>
+    <form id="upload-form" method="post" action="/upload" enctype="multipart/form-data">
+        <label for="new-value">Preset group name:</label>
+        <input type="text" id="new-value" name="new_value" required />
+        <br><br>
+        <label for="folder">Select a Folder:</label>
+        <input type="file" id="folder" name="files" webkitdirectory directory multiple required />
+        <br><br>
+        <button type="submit">Upload and Process</button>
+    </form>
+
+    {% endblock content %}
